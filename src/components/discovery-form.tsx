@@ -50,7 +50,6 @@ export default function DiscoveryForm({ onSubmit, isLoading }: DiscoveryFormProp
       </CardHeader>
       <CardContent className="p-6 pt-0">
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Basic Info Section */}
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="companyName" className="text-sm font-medium text-slate-800">
@@ -97,7 +96,6 @@ export default function DiscoveryForm({ onSubmit, isLoading }: DiscoveryFormProp
 
           <Separator className="bg-slate-200" />
 
-          {/* Context Section */}
           <div className="space-y-5">
             <div className="space-y-2">
               <Label htmlFor="currentSituation" className="text-sm font-medium text-slate-800">
@@ -158,7 +156,6 @@ export default function DiscoveryForm({ onSubmit, isLoading }: DiscoveryFormProp
 
           <Separator className="bg-slate-200" />
 
-          {/* Requirements Section */}
           <div className="space-y-5">
             <div className="space-y-2">
               <Label htmlFor="constraints" className="text-sm font-medium text-slate-800">

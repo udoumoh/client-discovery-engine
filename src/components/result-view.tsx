@@ -242,7 +242,6 @@ ${data.internalNotes}
           <TabsContent value="client">
             <ScrollArea className="h-[calc(100vh-20rem)] pr-4">
               <div className="space-y-6">
-                {/* Project Overview */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Project Overview
@@ -252,7 +251,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Goals */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Goals
@@ -269,7 +267,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Primary User Persona */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Primary User Persona
@@ -316,7 +313,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Recommended Features */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Recommended Features
@@ -349,7 +345,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Constraints and Risks */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Constraints & Risks
@@ -393,7 +388,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Success Metrics */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Success Metrics
@@ -410,7 +404,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Recommended Tracks */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Recommended Tracks
@@ -430,7 +423,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Project Opportunities */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Project Opportunities
@@ -447,7 +439,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Suggested Phases */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Suggested Phases
@@ -469,7 +460,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Complexity & Effort */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Complexity & Effort
@@ -500,7 +490,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Open Questions */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Open Questions
@@ -517,7 +506,6 @@ ${data.internalNotes}
 
                 <Separator className="bg-slate-200" />
 
-                {/* Suggested Next Steps */}
                 <section>
                   <h3 className="mb-3 text-xs font-semibold tracking-[0.16em] uppercase text-slate-400">
                     Suggested Next Steps
