@@ -14,6 +14,20 @@ interface DiscoveryFormProps {
   isLoading: boolean;
 }
 
+const DEMO_DATA: DiscoveryAnswers = {
+  companyName: "TechFlow Solutions",
+  contactRole: "Head of Product",
+  projectName: "Customer Dashboard Modernization",
+  currentSituation: "We currently have a legacy customer portal built 5 years ago that's difficult to maintain and doesn't provide the self-service capabilities our customers need. Our support team is overwhelmed with basic requests that could be automated.",
+  problemOrOpportunity: "Customer churn is increasing due to poor user experience and lack of modern features. We see an opportunity to reduce support costs by 40% and improve customer satisfaction scores through a modern, intuitive dashboard.",
+  targetUsers: "B2B customers, primarily operations managers and team leads at mid-size companies (50-500 employees) who need to manage their account, view analytics, and configure settings.",
+  existingSolutions: "Currently using our legacy portal with limited functionality. Some customers resort to emailing support or using spreadsheets to track their data. Competitors like Salesforce and HubSpot have more modern interfaces.",
+  constraints: "Budget: $150K, Timeline: 4 months to MVP, Must integrate with existing REST API and PostgreSQL database, Team of 3 developers available, Cannot cause downtime for existing customers.",
+  desiredOutcomes: "Reduce support tickets by 40%, improve NPS score from 6 to 8+, enable customers to self-serve for 80% of common tasks, increase user engagement by 3x.",
+  mustHaveFeatures: "Single sign-on integration, real-time analytics dashboard, account settings management, billing and invoice history, user role management, mobile responsive design.",
+  niceToHaveFeatures: "AI-powered insights and recommendations, customizable dashboard widgets, export functionality for reports, in-app chat support, dark mode theme, API access for power users.",
+};
+
 export default function DiscoveryForm({ onSubmit, isLoading }: DiscoveryFormProps) {
   const [formValues, setFormValues] = useState<DiscoveryAnswers>({
     companyName: "",
@@ -28,9 +42,34 @@ export default function DiscoveryForm({ onSubmit, isLoading }: DiscoveryFormProp
     mustHaveFeatures: "",
     niceToHaveFeatures: "",
   });
+  const [isDemoLoaded, setIsDemoLoaded] = useState(false);
 
   const updateField = (key: keyof DiscoveryAnswers, value: string) => {
     setFormValues((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const toggleDemoData = () => {
+    if (isDemoLoaded) {
+      // Clear all fields
+      setFormValues({
+        companyName: "",
+        contactRole: "",
+        projectName: "",
+        currentSituation: "",
+        problemOrOpportunity: "",
+        targetUsers: "",
+        existingSolutions: "",
+        constraints: "",
+        desiredOutcomes: "",
+        mustHaveFeatures: "",
+        niceToHaveFeatures: "",
+      });
+      setIsDemoLoaded(false);
+    } else {
+      // Load demo data
+      setFormValues(DEMO_DATA);
+      setIsDemoLoaded(true);
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,12 +80,25 @@ export default function DiscoveryForm({ onSubmit, isLoading }: DiscoveryFormProp
   return (
     <Card className="rounded-3xl bg-white/90 border border-slate-200 shadow-[0_18px_40px_rgba(15,23,42,0.06)] backdrop-blur">
       <CardHeader className="space-y-1.5 p-6">
-        <CardTitle className="text-xl font-semibold text-slate-900">
-          Client discovery intake
-        </CardTitle>
-        <CardDescription className="text-sm text-slate-500 leading-relaxed">
-          Capture the essentials of a new engagement in a few structured questions.
-        </CardDescription>
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1">
+            <CardTitle className="text-xl font-semibold text-slate-900">
+              Client discovery intake
+            </CardTitle>
+            <CardDescription className="text-sm text-slate-500 leading-relaxed">
+              Capture the essentials of a new engagement in a few structured questions.
+            </CardDescription>
+          </div>
+          <Button
+            type="button"
+            variant="outline"
+            onClick={toggleDemoData}
+            disabled={isLoading}
+            className="shrink-0 rounded-full border-slate-300 bg-white text-slate-700 hover:bg-slate-50 hover:text-slate-900 px-4 h-9 text-sm font-medium transition disabled:opacity-50"
+          >
+            {isDemoLoaded ? "Clear" : "Load Demo"}
+          </Button>
+        </div>
       </CardHeader>
       <CardContent className="p-6 pt-0">
         <form onSubmit={handleSubmit} className="space-y-6">
